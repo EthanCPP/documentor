@@ -10,5 +10,8 @@
         "psr-4": {
             "Ethancpp\\Documentor\\": "src/"
         }
+    },
+    "config": {
+        "optimize-autoloader": true
     }
 }
