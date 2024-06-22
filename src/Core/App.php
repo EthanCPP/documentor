@@ -36,12 +36,13 @@ class App {
     protected function setupDatabase()
     {
         $this->db = new DB(
-            $_ENV['MYSQL_DB'],
-            $_ENV['MYSQL_USER'] ?? 'root',
-            $_ENV['MYSQL_PASS'] ?? '',
-            $_ENV['MYSQL_HOST'] ?? 'localhost',
-            $_ENV['MYSQL_PORT'] ?? 3306,
-            $_ENV['MYSQL_DRIVER'] ?? 'PDO'
+            $_ENV['DB_NAME'],
+            $_ENV['DB_USER'] ?? 'root',
+            $_ENV['DB_PASS'] ?? '',
+            $_ENV['DB_HOST'] ?? 'localhost',
+            $_ENV['DB_PORT'] ?? 3306,
+            $_ENV['DB_DRIVER'] ?? 'PDO',
+            $_ENV['DB_ADAPTER'] ?? 'mysql'
         );
     }
 

@@ -15,12 +15,13 @@ class DB {
         string     $password = '',
         string     $host     = 'localhost',
         int|string $port     = 3306,
-        string     $driver   = 'PDO'
+        string     $driver   = 'PDO',
+        string     $adapter  = 'mysql'
     ) {
         $this->driver = $driver;
 
         if ($driver == 'PDO') {
-            $this->db = new Pdo($dbname, $user, $password, $host, (int) $port);
+            $this->db = new Pdo($dbname, $user, $password, $host, (int) $port, $adapter);
         }
     }
 

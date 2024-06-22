@@ -11,10 +11,11 @@ class Pdo {
         string $user, 
         string $password, 
         string $host, 
-        int $port, 
+        int    $port, 
+        string $adapter
     ) {
         try {
-            $this->db = new \PDO("mysql:host={$host};port={$port};dbname={$dbname}", $user, $password);
+            $this->db = new \PDO("{$adapter}:host={$host};port={$port};dbname={$dbname}", $user, $password);
         } catch (\PDOException $e) {
             // TODO improve this.
             var_dump('Failed to connect to database: ' . $e->getMessage());
